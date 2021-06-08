@@ -3,8 +3,29 @@
 {% load bootstrap_icons %}
 
 {% block content %}
-!-- Portfolio Section-->
+
+<style>
+.rectangle{
+    background-color:#3B1736;
+}
+
+
+body{
+    background: #f1e3d3;
+}
+
+.title {
+  color: #231942;
+  text-align: center;
+  font-size: 3rem;
+}
+
+</style>
+<!-- Portfolio Section-->
+
+
 <section class="page-section portfolio" id="portfolio">
+    <h1 class="title mb-5">Collection</h1>
     <div class="container">
 
     <!-- Portfolio Grid Items-->
@@ -13,7 +34,7 @@
         <!-- Portfolio Item 1-->
         {% for painter in painters %}
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="rectangle rounded bg-success">
+            <div class="rectangle rounded">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1{{painter.id}}">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i
@@ -40,10 +61,12 @@
                             <div class="row align-items-start">
                                 <div class="col-lg-10">
                                     <!-- Portfolio Modal - Title-->
-                                    <h5 class="portfolio-modal-title text-secondary text-lowercase mb-0"
-                                        id="portfolioModal1Label">{{ painting.title }}</h5>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
+                                    <h2 class="title text-secondary text-lowercase mb-0"
+                                        id="portfolioModal1Label">{{ painter.last_name }}, {{ painter.first_name }}</h2>
+                                    <h6>
+                                     {{ painter.date_of_birth }}-{{ painter.date_of_death }}
+                                    </h6>
+                                    <!-- Icon Divider--><div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-paint-brush"></i></div>
                                         <div class="divider-custom-line"></div>
@@ -51,12 +74,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="{{ painter.image.url }}" alt="..."/>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5"><strong>Description:</strong> {{ painting.description }}
-                                        <br>
-                                        <strong>Technique:</strong> {{ painter.first_name }} sur {{ painter.last_name }}
-                                        <br>
-                                        <strong>Location:</strong> {{ painter.biography }}
-                                    </p>
+                                    <p class="mb-5"><strong>Biography:</strong>{{ painter.biography }}</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window

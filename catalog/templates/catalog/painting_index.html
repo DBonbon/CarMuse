@@ -41,6 +41,70 @@
     transform: scale(90%);
 }
 
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.card:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  background-color: #2a9d8f80;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-title {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.title {
+  color: #231942;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.icon {
+  color: white;
+  font-size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 @media screen and (max-width: 958px){
     .card-columns{
         column-count: 2;
@@ -55,9 +119,29 @@
 
 
 
+
 </style>
 
 <body>
+
+<!-- Portfolio Section Heading-->
+
+<div class="m-5">
+        <h1 class="title mb-0">Collection</h1>
+    <form action="{% url 'art_search' %}" method="get">
+    <input type="text" name="q" placeholder="Search Paintings">
+</form>
+    <!-- Icon Divider-->
+        <div class="divider-custom-line"></div>
+
+
+
+
+</div>
+
+
+
+<!-- Portfolio Grid Items-->
 
 <div class="container">
 
@@ -73,7 +157,14 @@
 
                     <div class="card">
                         <img src="{{ painting.image.url }}" alt="">
+                        <div class="overlay-title rounded">{{painting.title}}</div>
+                        <div class="rounded overlay">
+                            <a href="#" class="icon">
+                                <i class="fas fa-expand fa-3x"></i>
+                            </a>
+                        </div>
                     </div>
+
 
                     <!-- Portfolio Modal 1-->
 
@@ -129,6 +220,40 @@
 
 
             </div>
+<div class="col-4 offset-4">
+  <nav aria-label="...">
+    <ul class="pagination">
+
+      {% if page_obj.has_previous%}
+        <li class="page-item">
+          <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Previous</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+      {% endif %}
+
+      <li class="page-item">
+        <a class="page-link" href="#">{{ page_obj.number }}</a>
+      </li>
+
+    <!-- new -->
+    {% if page_obj.has_next %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Next</span>
+      </li>
+    {% endif %}
+    <!--/new -->
+
+    </ul>
+  </nav>
+</div>
+
 
 
             <!--here to enter the page fleshes, NEXT PREVIOUS-->

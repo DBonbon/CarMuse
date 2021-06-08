@@ -24,16 +24,26 @@
 }
 
 .navbar .nav-item {
-    color: #0DFFFF !important;
+    color: #FFFF !important;
 }
 
 .navbar-dark .navbar-nav .nav-link{
-    color: #6A5FAB;!important;
+    color: #FFF;!important;
     margin-right:5px;
 }
 
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #D0590A;!important;
+    margin-right:5px;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  font-weight: bolder;
+  color: #f14242;
+}
+
 .nav-link:hover{
-    color: #8B008B;!important;
+    color: #FFFFFF;!important;
 }
 
 .navbar .navbar-brand{
@@ -60,7 +70,7 @@ navbar-light .navbar-nav .nav-lin{
 }
 
 
-.phone, .email. search  {
+. search  {
     margin-right:5px;
 }
 
@@ -70,18 +80,6 @@ navbar-light .navbar-nav .nav-lin{
 
 .email{
     color: #E91E63;
-}
-
-#login, #logout {
-    border: 2px solid #fff;
-    border-radius: 200px;
-    padding: 0.2em 1rem!important;
-    line-height: 40px;
-}
-
-#login:hover, #logout:hover {
-    background-color: #F44336!important;
-    border: 2px solid #F44336;
 }
 
 #signup, #profile   {
@@ -121,7 +119,7 @@ navbar-light .navbar-nav .nav-lin{
     </ul>
       <ul class="navbar-nav">
       {% if user.is_authenticated %}
-                        <li class="nav-item mx-1 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger js-scroll-trigger {% if request.path == login_url %} active {%endif%}" href="{{ logout_url }}" id="logout">logout</a></li>
+                        <li class="nav-item mx-1 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger js-scroll-trigger {% if request.path == logout_url %} active {%endif%}" href="{{ logout_url }}" id="logout">logout</a></li>
                         <li class="nav-item mx-1 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 {% if request.path == login_url %} active {%endif%}" href="{{ profile_url }}">profile</a></li>
                         <li class="nav-item mx-1 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 js-scroll-trigger {% if request.path == login_url %} active {%endif%}" href="{% url 'post-create' %}">New Post</a></li>
                         {% else %}

@@ -1,12 +1,15 @@
-#main {
-  padding-top: 74px);
+#main{
+    padding-top: 74px);
 }
+
 
 @media (min-width: 992px) {
   #main {
     padding-top: 74px;
   }
 }
+
+
 
 /*
 
@@ -64,6 +67,7 @@
 }
 
 .navbar .nav-item {
+    font-weight: bolder;
     color: #0DFFFF !important;
 }
 
@@ -104,17 +108,6 @@ navbar-light .navbar-nav .nav-lin{
     margin-right:5px;
 }
 
-#login, #logout {
-    border: 2px solid #fff;
-    border-radius: 200px;
-    padding: 0.2em 1rem!important;
-    line-height: 40px;
-}
-
-#login:hover, #logout:hover {
-    background-color: #F44336!important;
-    border: 2px solid #F44336;
-}
 
 #signup, #profile   {
     border: 2px solid #F44336;
@@ -131,11 +124,15 @@ navbar-light .navbar-nav .nav-lin{
 }
 
 
-
 .masthead {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+
+.masthead-heading{
+    color: #f14242
+}
+
 
 @media (min-width: 992px) {
   .masthead {
@@ -153,7 +150,7 @@ background-size: cover;
 .overlay {
 	height: 30px;
    	width: 330px;
-  	background-color: rgba(0, 0, 0, 0.5);
+  	background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     bottom: 0;
   	color: white;
@@ -241,7 +238,7 @@ background-size: cover;
 
 
 body{
-    padding-top: 70px;
+    padding-top: 0px;
     }
 
 .container{
