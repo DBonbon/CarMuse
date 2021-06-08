@@ -1,0 +1,84 @@
+.navbar {
+    position: absolute;
+    background: rgba(0,0,0,0.3)!important;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+.navbar .nav-link {
+    color: red;!important;
+    margin-right:5px;
+}
+
+.navbar .nav-link:hover {
+    color: #8B008B;!important;
+}
+
+.navbar .navbar-brand{
+    color : #FFF;
+    font-weight: bolder;
+    font-size: 1.3em;
+
+navbar-light .navbar-nav .nav-lin{
+    text-align: center;
+    margin-bottom: 10px!important;
+}
+
+
+.navbar-light .navbar-toggler{
+    color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+
+#signup{
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+#login{
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+.phone, .email. search  {
+    margin-right:5px;
+}
+
+.phone{
+    color: #03A9F4;
+}
+
+.email{
+    color: #E91E63;
+}
+
+#login, #logout {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 0.2em 1rem!important;
+    line-height: 30px;
+}
+
+#login:hover, #logout:hover {
+    background-color: #F44336!important;
+    border: 2px solid #F44336;
+}
+
+#signup, #profile   {
+    border: 2px solid #F44336;
+    background-color: #F44336!important;
+    border-radius: 20px;
+    padding: 0.2em 1rem!important;
+    line-height: 30px;
+}
+
+#signup:hover, #profile:hover   {
+    background-color: #FFF!important;
+    border: 2px solid #FFF;
+    color: #F44336!important;
+}
