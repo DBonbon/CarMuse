@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% load bootstrap_icons %}
 {% block content %}
 
 <style>
@@ -17,6 +18,27 @@
 body{
     background: #f1e3d3;
 }
+
+.carousel{
+  color: #202020 ;
+  background-color: #202020  !important;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+
 </style>
 <body>
 <!--Carousel Wrapper-->
@@ -33,7 +55,8 @@ body{
       {% for p in photos %}
       <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
         <img class="img-fluid d-block centered" src="{{p.photos.url}}"
-          alt="First slide" >
+          alt="First slide">
+          <div class="overlay-summary rounded">{{p.summary}}</div>
       </div>
       {% endfor %}
       <!--/First slide-->

@@ -17,7 +17,7 @@ body{
   <div class="card-img-overlay">
     <h4 class="card-title">{{expo.title}}</h4>
     <p class="card-text">{{expo.description}}</p>
-    <a href="#" class="btn btn-primary">Voir expo</a>
+    <a href="{% url 'expo_detail' expo.id %}" class="btn btn-primary">Voir expo</a>
   </div>
 </div>
     </div>

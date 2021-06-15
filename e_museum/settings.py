@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'cloudinary',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

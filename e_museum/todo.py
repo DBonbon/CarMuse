@@ -6,3 +6,6 @@
 
 # todo:
 #   Filtering site: read about django-filter package
+
+
+# Djanog-decouple is used for security to separate all the secrets keys and passwords.
