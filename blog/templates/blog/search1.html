@@ -15,7 +15,7 @@
 
         <col class="sm-12">
         {% for post in posts %}
-        <a href="{% url 'post_detail' post.id %}">{{ post }}</a><br>
+        <a href="{% url 'post_detail' post.id%}">{{ post }}</a><br>
         {% endfor %}
 
         {% else %}

@@ -3,6 +3,7 @@ from blog.forms import CommentForm
 from blog.models import Post, Comment
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -97,6 +98,18 @@ def blog_category(request, category):
     )
     context = {"category": category, "posts": posts}
     return render(request, "blog/blog_category.html", context)
+
+
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-created_on')
+
 
 
 class PostDetailView(DetailView):
