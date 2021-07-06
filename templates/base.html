@@ -16,17 +16,119 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'theme/css/styles.css' %}" rel="stylesheet" />
-
-        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
         <link href="{% static 'css/blog.css' %}" rel="stylesheet" />
 
 
 </head>
 <body>
 
-    {% block mycss %} {% endblock mycss %}
-    {# to be followed by : {% block mycss %} <style> Your entire css </style> {% endblock %} #}
+<style>
 
+.navbar {
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
+
+.navbar-default {
+
+   .navbar-brand {
+     margin-top: 10px;
+     color: black;
+
+      &:hover {
+         color: #C57ED3;
+         border: 1px solid #C57ED3;
+      }
+   }
+
+  .navbar-nav {
+
+    > li {
+
+      > a {
+        color: white;
+        margin: 10px 5px 5px 5px;
+
+      }
+      > a:hover, > a:active, > a:focus {
+        color: #C57ED3;
+        border: 1px solid #C57ED3;
+      }
+      > a:visited {
+        color: #C57ED3;
+        text-decoration: none;
+      }
+
+    } //end li
+
+    > .active {
+
+      > a, > a:hover, > a:focus {
+        background-color: transparent;
+        color: #C57ED3;
+      }
+
+    }
+
+  } //end .navbar-nav
+
+  //Collapsed styles
+  .navbar-toggle {
+    border-color: #C57ED3;
+
+      &:hover, &:focus {
+        background-color: #490D40;
+      }
+
+
+
+      .icon-bar {
+        color: #C57ED3;
+        background-color: #C57ED3;
+
+      }
+  }
+
+  .navbar-collapse.collapse.in ul {
+    background-color: #490D40;
+  }
+
+} //end .navbar-default
+
+
+
+/* Solid class attached on scroll past first section */
+
+.navbar.solid {
+  background-color: #490D40;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+
+    .navbar-brand {
+      color: #C57ED3;
+      transition: color 1s ease 0s;
+    }
+
+    .navbar-nav {
+
+       > li {
+
+          > a {
+            color: #C57ED3;
+            transition: color 1s ease 0s;
+          }
+
+       } //end li
+
+    } //end .navbar-nav
+
+}
+</style>
 
     {% include 'navbar.html'%}
     <main id="main">
