@@ -3,24 +3,27 @@
 
 {% block content %}
         <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+
+    <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
+
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">À propos de nous</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">{{ about.title }}</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-paint-brush"></i></div>
+                    <i class="fas fa-paint-brush"></i>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">En tant que fondateurs d'une fondation d'art à but non lucratif, le Fondation Herman Krikhaar, nous sommes animés par la même passion qui anime tous les autres fondateurs de fondations d'art. Notre objectif est de promouvoir les facteurs qui rendent chaque Fondation unique, en partageant ses choix individuels et les spécialités qu'elle a adoptées.</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">Notre mission est de Créer une synergie entre les fondations d'art du monde entier, tout en partageant leurs histoires individuelles, leurs missions, leurs collections d'art et leurs programmes publics avec notre public mondial.</p></div>
+                    <div class="col-lg-4 ml-auto"><p class="lead">{{ about.subtitle }}</p></div>
+<!--                    <div class="col-lg-4 mr-auto"><p class="lead">Notre mission est de Créer une synergie entre les fondations d'art du monde entier, tout en partageant leurs histoires individuelles, leurs missions, leurs collections d'art et leurs programmes publics avec notre public mondial.</p></div>-->
                 </div>
                 <!-- About Section Button-->
+               {#% for about in abouts %#}
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                    <a class="btn btn-xl btn-outline-light" href="{{ about.url }}">
                         <i class="fas fa-download mr-2"></i>
                         Free Download!
                     </a>
@@ -77,6 +80,7 @@
                         </form>
                     </div>
                 </div>
+                {#% endfor %#}
             </div>
         </section>
         <!-- Footer-->
