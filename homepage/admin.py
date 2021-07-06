@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Cover
 
-# Register your models here.
+class CoverAdmin(admin.ModelAdmin):
+    list_display = ('id', 'header', 'pitch', 'image')
+
+admin.site.register(Cover, CoverAdmin)

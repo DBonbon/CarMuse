@@ -1,6 +1,20 @@
 from django.db import models
+import PIL
+from PIL import Image, ExifTags
+from django.urls import reverse
 
-# Create your models here.
+
+
+class Cover(models.Model):
+    '''Model representing a the cover page'''
+    header = models.CharField(max_length=200)
+    pitch = models.TextField(max_length=1000, blank=True, help_text='Enter a brief pitch for the homepage...only if needed')
+    image = models.ImageField(upload_to='media/homepage/', null=True, blank=True)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.header
+
 
 
 # todo create models so sections can be created, updated b. add Gender, online
