@@ -109,13 +109,14 @@ class Painting(models.Model):
 
     display_tag.short_description = 'Tag'
 
-    '''def get_absolute_url(self):
+    def get_absolute_url(self):
         """#Returns the url to access a particular painting instance."""
-        #return reverse('paint-detail', arg=[str(self.id)])'''
+        return reverse('paint-detail', arg=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""
         return self.title
+
 
 
 class Painter(models.Model):
