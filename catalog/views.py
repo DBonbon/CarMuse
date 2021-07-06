@@ -33,8 +33,8 @@ def index(request):
 class PaintingListView(generic.ListView):
     model = Painting
     context_object_name = 'painting_list'   # your own name for the list as a template variable
-    #queryset = Painting.objects.filter(title__icontains='war')[:5] # Get 5 books containing the title war
     template_name = 'catalog/painting_list.html'  # Specify your own template name/location
+
 
 
 class PaintingDetailView(generic.DetailView):
@@ -53,40 +53,6 @@ class SearchResultsView(ListView):
         )
         return object_list
 
-# def art_search(request):
-#     if request.method == "GET":
-#         query = request.GET.get('q')
-#         results = Painting.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
-#
-#     context = {
-#         'query': query,
-#         'results': results,
-#     }
-#
-#     return render(request, "catalog/art_search.html", context)
-
-
-
-
-
-
-
-# def painting_index(request):
-#     paintings = Painting.objects.all()
-#     paginator = Paginator(paintings, 24)
-#
-#     page_number = request.GET.get('page')
-#     page_obj = paginator.get_page(page_number)
-#
-#     context = {'page_obj': page_obj}
-#     return render(request, "catalog/painting_index.html", context)
-#
-#
-# def painting_detail(request, pk):
-#     painting = Painting.objects.get(pk=pk).count
-#     context = {"painting": painting}
-#     return render(request, "catalog/painting_detail.html", context)
-#
 
 def painter_index(request):
     painters = Painter.objects.all()
