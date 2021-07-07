@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+#from decouple import config
 from pathlib import Path
 
 
@@ -21,9 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = 'django-insecure-h9ua$b_+j^x33i5uw9jh&%r(6ffc@gbc%(o5+#919*ae$+i+gy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = config('DEBUG', cast=bool)
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -164,6 +167,7 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'bonbons',
     'API_KEY': '411736333884953',
     'API_SECRET': 'SdLt_7Vy37CL9v4KBpxO1B3m9l0',
+    'Environment variable': 'CLOUDINARY_URL=cloudinary://411736333884953:SdLt_7Vy37CL9v4KBpxO1B3m9l0@bonbons'
 }
 
 
@@ -184,3 +188,10 @@ LOGIN_URL = 'users/login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+
+
+
+
+

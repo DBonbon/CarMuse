@@ -31,10 +31,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('expo/', include('expo.urls')),
     path('users/', include('users.urls')),
-    # path('register/', user_views.register, name='register'),
-    # url(r"^", include("users.urls")),
-    # path('dashboard/', include("users.urls")),
-    # path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

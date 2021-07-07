@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<container class="text-center">
+
+<h1>Search Results</h1>
+
+<ul>
+  {% for painting in object_list %}
+    <li>
+      <a href="{% url 'painting_detail' pk=painting.pk %}"><h6>{{painting.title}}</h6></a>
+    </li>
+  {% endfor %}
+</ul>
+
+</container>
+{% endblock %}
