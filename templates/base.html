@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load compress %}
 
 <html lang="en">
 <head>
@@ -19,6 +20,9 @@
 
         <link href="{% static 'css/main.css' %}" rel="stylesheet" />
         <link href="{% static 'css/blog.css' %}" rel="stylesheet" />
+        {% compress css %}
+        <link type="text/x-scss" href="{% static 'main.scss' %}" rel="stylesheet" media="screen">
+        {% endcompress %}
 
 
 </head>

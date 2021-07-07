@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'cloudinary',
+    'compressor',
     # 'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -142,6 +143,17 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR / 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')      #this line apparently for pyhtonanywhere
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
